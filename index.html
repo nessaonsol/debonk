@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Debonk</title>
-      <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-
+    <link rel="icon" type="image/x-icon" href="Screenshot 2025-08-02 202829.png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
         
@@ -31,6 +30,29 @@
         header {
             text-align: center;
             margin-bottom: 80px;
+            position: relative;
+        }
+        
+        .x-button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #000;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            font-family: 'Inter', sans-serif;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .x-button:hover {
+            background: #333;
         }
         
         .logo {
@@ -339,9 +361,10 @@
 <body>
     <div class="container">
         <header>
+            <a href="https://x.com/DebonkOnSol" target="_blank" class="x-button">X</a>
             <div class="logo">Debonk</div>
-            <img src="Screenshot 2025-08-02 202829.png" alt="Debonk Logo" class="logo-image">
-            <p class="tagline">Find out if those threads are actually larp</p>
+            <img src="your-image-url-here.jpg" alt="Debonk Logo" class="logo-image">
+            <p class="tagline">Find out if a thread is larp</p>
         </header>
         
         <div class="main-content">
@@ -496,6 +519,7 @@
             // Simulate API response
             setTimeout(() => {
                 const isOriginal = Math.random() > 0.5;
+                const randomTimes = Math.floor(Math.random() * 10) + 1; // Random number 1-10
                 
                 if (isOriginal) {
                     result.innerHTML = `
@@ -519,7 +543,7 @@
                         <div>
                             <div style="display: flex; align-items: center; margin-bottom: 16px;">
                                 <span class="status-indicator status-duplicate"></span>
-                                <h3 style="font-size: 1.1rem; font-weight: 600; color: #dc2626;">Potential Duplicate Detected</h3>
+                                <h3 style="font-size: 1.1rem; font-weight: 600; color: #dc2626;">Larp - This was done over ${randomTimes} times</h3>
                             </div>
                             <p style="color: #64748b; margin-bottom: 16px;">
                                 Similar content was found. This thread may be derivative of existing posts.
@@ -550,5 +574,4 @@
         });
     </script>
 </body>
-
 </html>
