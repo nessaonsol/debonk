@@ -3,576 +3,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Debonk</title>
-    <link rel="icon" type="image/x-icon" href="Screenshot 2025-08-02 202829.png">
+    <title>TV Coin</title>
+    <link rel="icon" type="image/x-icon" href="Screenshot 2025-08-03 184442.png">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Inter', sans-serif;
-            background: #f8fafc;
-            color: #334155;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
+            color: #333;
+            background: #ffffff;
+            min-height: 100vh;
         }
-        
+
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 60px 20px;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 80px;
+            padding: 40px 20px;
             position: relative;
         }
-        
+
         .x-button {
             position: absolute;
-            top: 0;
-            right: 0;
-            background: #000;
+            top: 20px;
+            right: 20px;
+            background: #000000;
             color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 6px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-            font-family: 'Inter', sans-serif;
+            padding: 10px 20px;
+            border-radius: 25px;
             text-decoration: none;
-            display: inline-block;
+            font-weight: 600;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
-        
+
         .x-button:hover {
-            background: #333;
+            background: #333333;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
-        
-        .logo {
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: #1e293b;
-            margin-bottom: 24px;
-            letter-spacing: -0.02em;
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            background: #ffffff;
+            border: 2px solid #000000;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
-        
-        .logo-image {
-            max-width: 200px;
-            height: auto;
-            margin-bottom: 16px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+        .tv-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            display: block;
         }
-        
-        .tagline {
-            font-size: 1.1rem;
-            color: #64748b;
-            font-weight: 400;
+
+        h1 {
+            font-size: 3.5em;
+            font-weight: 800;
+            color: #2d3748;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
-        
+
+        .subtitle {
+            font-size: 1.3em;
+            color: #4a5568;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
         .main-content {
-            background: white;
-            border-radius: 12px;
-            padding: 48px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e2e8f0;
+            background: #ffffff;
+            border: 2px solid #000000;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             margin-bottom: 40px;
         }
-        
-        .description {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-        
-        .description h2 {
-            font-size: 1.75rem;
-            font-weight: 600;
-            color: #1e293b;
-            margin-bottom: 16px;
-        }
-        
-        .description p {
-            font-size: 1rem;
-            color: #64748b;
-            max-width: 600px;
-            margin: 0 auto 16px;
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 32px;
-            margin: 48px 0;
-        }
-        
-        .feature {
-            padding: 24px;
-            border-radius: 8px;
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            transition: all 0.2s ease;
-        }
-        
-        .feature:hover {
-            background: white;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-        
-        .feature h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #1e293b;
-            margin-bottom: 8px;
-        }
-        
-        .feature p {
-            font-size: 0.9rem;
-            color: #64748b;
-        }
-        
-        .demo-section {
-            background: #f1f5f9;
-            border-radius: 8px;
-            padding: 32px;
-            margin: 24px 0;
-            border: 1px solid #e2e8f0;
-        }
-        
-        .demo-section h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #1e293b;
-            text-align: center;
-            margin-bottom: 24px;
-        }
-        
-        .input-group {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 24px;
-            flex-wrap: wrap;
-        }
-        
-        .thread-input {
-            flex: 1;
-            padding: 12px 16px;
-            border: 1px solid #d1d5db;
-            border-radius: 6px;
-            font-size: 0.95rem;
-            font-family: 'Inter', sans-serif;
-            min-width: 250px;
-            transition: border-color 0.2s ease;
-        }
-        
-        .thread-input:focus {
-            outline: none;
-            border-color: #3b82f6;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-        }
-        
-        .check-btn {
-            background: #3b82f6;
+
+        .experiment-box {
+            background: #000000;
             color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 6px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-            font-family: 'Inter', sans-serif;
-            white-space: nowrap;
-        }
-        
-        .check-btn:hover {
-            background: #2563eb;
-        }
-        
-        .check-btn:active {
-            background: #1d4ed8;
-        }
-        
-        .result {
-            background: white;
-            border-radius: 6px;
-            padding: 24px;
-            margin-top: 24px;
-            border: 1px solid #e2e8f0;
-            display: none;
-        }
-        
-        .code-section {
-            background: white;
-            border-radius: 12px;
-            padding: 48px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e2e8f0;
-            margin-bottom: 40px;
-        }
-        
-        .code-description {
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
             text-align: center;
-            margin-bottom: 48px;
         }
-        
-        .code-description h2 {
-            font-size: 1.75rem;
+
+        .experiment-box h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .experiment-box p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        .details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .detail-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid #000000;
+        }
+
+        .detail-card h3 {
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .detail-card p {
+            color: #4a5568;
+            font-size: 1.1em;
+        }
+
+        .cta-section {
+            text-align: center;
+            background: #ffffff;
+            border: 2px solid #000000;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #000000;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
             font-weight: 600;
-            color: #1e293b;
-            margin-bottom: 16px;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
-        
-        .code-description p {
-            font-size: 1rem;
-            color: #64748b;
-            max-width: 600px;
-            margin: 0 auto 16px;
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            background: #333333;
         }
-        
-        .code-examples {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-        
-        .code-example {
-            background: #1e293b;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-        
-        .code-header {
-            background: #334155;
-            padding: 12px 16px;
-            color: #e2e8f0;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-        
-        .code-content {
-            padding: 16px;
-            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-            font-size: 0.85rem;
-            line-height: 1.6;
-            color: #e2e8f0;
-            overflow-x: auto;
-        }
-        
-        .code-content .keyword {
-            color: #f59e0b;
-        }
-        
-        .code-content .string {
-            color: #10b981;
-        }
-        
-        .code-content .comment {
-            color: #6b7280;
-            font-style: italic;
-        }
-        
-        .code-content .function {
-            color: #3b82f6;
-        }
-        
-        .code-content .variable {
-            color: #8b5cf6;
-        }
-        
+
         .footer {
             text-align: center;
-            margin-top: 60px;
-            color: #64748b;
-            font-size: 0.9rem;
+            margin-top: 40px;
+            color: #666666;
         }
-        
-        .footer p {
-            margin-bottom: 8px;
-        }
-        
-        .status-indicator {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            margin-right: 8px;
-        }
-        
-        .status-original {
-            background: #10b981;
-        }
-        
-        .status-duplicate {
-            background: #ef4444;
-        }
-        
-        .loading-bar {
-            width: 100%;
-            height: 4px;
-            background: #f1f5f9;
-            border-radius: 2px;
-            overflow: hidden;
-            margin: 16px 0;
-        }
-        
-        .loading-progress {
-            height: 100%;
-            background: #3b82f6;
-            border-radius: 2px;
-            transition: width 0.3s ease;
-        }
-        
-        @keyframes loading {
-            0% { width: 0%; }
-            100% { width: 100%; }
-        }
-        
+
         @media (max-width: 768px) {
             .container {
-                padding: 40px 16px;
+                padding: 20px 15px;
             }
-            
-            .main-content {
-                padding: 32px 24px;
+
+            h1 {
+                font-size: 2.5em;
             }
-            
-            .input-group {
-                flex-direction: column;
+
+            .header, .main-content, .cta-section {
+                padding: 30px 20px;
             }
-            
-            .thread-input {
-                min-width: auto;
+
+            .details {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
-            
-            .logo {
-                font-size: 2rem;
-            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <a href="https://x.com/DebonkOnSol" target="_blank" class="x-button">X</a>
-            <div class="logo">Debonk</div>
-            <img src="Screenshot 2025-08-02 202829.png" alt="Debonk Logo" class="logo-image">
-            <p class="tagline">Find out if a thread is larp</p>
-        </header>
+        <a href="https://x.com/TvCoinBonk" class="x-button" target="_blank">𝕏</a>
         
+        <div class="header">
+            <div class="tv-icon">📺</div>
+            <h1>TV COIN</h1>
+            <p class="subtitle">The world's first memecoin TV advertising experiment</p>
+        </div>
+
         <div class="main-content">
-            <div class="description">
-                <h2>Authentic Content Verification</h2>
-                <p>Debonk uses advanced AI and X's API to analyze threads and detect if similar content has been posted before.</p>
-                <p>Protect your platform from repetitive content and maintain authenticity in your community.</p>
+            <div class="experiment-box">
+                <h2>THE EXPERIMENT</h2>
+                <p>We paid for TV advertisements of our memecoin on major TV channels across the USA and UK for 1 entire week to see if people actually buy our memecoin!</p>
             </div>
-            
 
-            
-            <div class="demo-section">
-                <h3>Try the Verification Tool</h3>
-                <div class="input-group">
-                    <input type="text" class="thread-input" placeholder="Enter X thread URL for verification..." id="threadInput">
-                    <button class="check-btn" onclick="checkThread()">Verify Thread</button>
+            <div class="details">
+                <div class="detail-card">
+                    <h3>Coverage</h3>
+                    <p>TV channels across USA and UK</p>
                 </div>
-                <div class="result" id="result">
-                    <p><strong>Verification results will appear here</strong></p>
+                <div class="detail-card">
+                    <h3>Duration</h3>
+                    <p>1 full week of advertisements</p>
                 </div>
+                <div class="detail-card">
+                    <h3>Goal</h3>
+                    <p>Test if TV ads drive memecoin purchases</p>
+                </div>
+                <div class="detail-card">
+                    <h3>Type</h3>
+                    <p>Real-world marketing experiment</p>
+                </div>
+            </div>
+
+            <div style="background: #e8f4fd; padding: 30px; border-radius: 15px; text-align: center; margin: 30px 0;">
+                <h3 style="color: #2d3748; margin-bottom: 15px;">Why TV Advertising?</h3>
+                <p style="color: #4a5568; font-size: 1.1em;">While most memecoins rely on social media hype, we wanted to test if traditional TV advertising could actually drive cryptocurrency purchases. This is a genuine experiment to see if mainstream media can influence the crypto market.</p>
             </div>
         </div>
-        
-        <div class="api-section">
-            <div class="api-info">
-                <h3>Powered by xAI API</h3>
-                <p>Leverage advanced AI capabilities for accurate thread verification and content analysis</p>
-            </div>
-            
-            <div class="code-examples">
-                <div class="code-example">
-                    <div class="code-header">JavaScript - Basic Integration</div>
-                    <div class="code-content">
-<span class="keyword">const</span> <span class="variable">checkThread</span> = <span class="keyword">async</span> (<span class="variable">threadUrl</span>) => {
-  <span class="keyword">const</span> <span class="variable">response</span> = <span class="keyword">await</span> <span class="function">fetch</span>(<span class="string">'https://api.x.ai/v1/verify'</span>, {
-    <span class="variable">method</span>: <span class="string">'POST'</span>,
-    <span class="variable">headers</span>: {
-      <span class="string">'Authorization'</span>: <span class="string">`Bearer ${API_KEY}`</span>,
-      <span class="string">'Content-Type'</span>: <span class="string">'application/json'</span>
-    },
-    <span class="variable">body</span>: <span class="function">JSON.stringify</span>({
-      <span class="variable">url</span>: <span class="variable">threadUrl</span>,
-      <span class="variable">check_duplicates</span>: <span class="keyword">true</span>
-    })
-  });
-  
-  <span class="keyword">return</span> <span class="keyword">await</span> <span class="variable">response</span>.<span class="function">json</span>();
-};</div>
-                </div>
-                
-                <div class="code-example">
-                    <div class="code-header">Python - API Response Handling</div>
-                    <div class="code-content">
-<span class="keyword">import</span> <span class="variable">requests</span>
 
-<span class="keyword">def</span> <span class="function">verify_thread</span>(<span class="variable">thread_url</span>, <span class="variable">api_key</span>):
-    <span class="variable">headers</span> = {
-        <span class="string">'Authorization'</span>: <span class="string">f'Bearer {api_key}'</span>,
-        <span class="string">'Content-Type'</span>: <span class="string">'application/json'</span>
-    }
-    
-    <span class="variable">payload</span> = {
-        <span class="string">'url'</span>: <span class="variable">thread_url</span>,
-        <span class="string">'similarity_threshold'</span>: <span class="string">0.85</span>
-    }
-    
-    <span class="variable">response</span> = <span class="variable">requests</span>.<span class="function">post</span>(
-        <span class="string">'https://api.x.ai/v1/verify'</span>,
-        <span class="variable">headers</span>=<span class="variable">headers</span>,
-        <span class="variable">json</span>=<span class="variable">payload</span>
-    )
-    
-    <span class="keyword">return</span> <span class="variable">response</span>.<span class="function">json</span>()</div>
-                </div>
-                
-                <div class="code-example">
-                    <div class="code-header">API Response Example</div>
-                    <div class="code-content">
-{
-  <span class="string">"status"</span>: <span class="string">"success"</span>,
-  <span class="string">"is_duplicate"</span>: <span class="keyword">false</span>,
-  <span class="string">"confidence_score"</span>: <span class="string">0.94</span>,
-  <span class="string">"similar_threads"</span>: [],
-  <span class="string">"analysis"</span>: {
-    <span class="string">"content_hash"</span>: <span class="string">"abc123..."</span>,
-    <span class="string">"semantic_similarity"</span>: <span class="string">0.12</span>,
-    <span class="string">"timestamp"</span>: <span class="string">"2024-08-02T15:30:00Z"</span>
-  },
-  <span class="string">"metadata"</span>: {
-    <span class="string">"processed_at"</span>: <span class="string">"2024-08-02T15:30:01Z"</span>,
-    <span class="string">"api_version"</span>: <span class="string">"1.0"</span>
-  }
-}</div>
-                </div>
-                
-                <div class="code-example">
-                    <div class="code-header">Node.js - Express Integration</div>
-                    <div class="code-content">
-<span class="keyword">const</span> <span class="variable">express</span> = <span class="function">require</span>(<span class="string">'express'</span>);
-<span class="keyword">const</span> <span class="variable">app</span> = <span class="function">express</span>();
-
-<span class="variable">app</span>.<span class="function">post</span>(<span class="string">'/verify-thread'</span>, <span class="keyword">async</span> (<span class="variable">req</span>, <span class="variable">res</span>) => {
-  <span class="keyword">try</span> {
-    <span class="keyword">const</span> { <span class="variable">threadUrl</span> } = <span class="variable">req</span>.<span class="variable">body</span>;
-    
-    <span class="keyword">const</span> <span class="variable">result</span> = <span class="keyword">await</span> <span class="function">fetch</span>(<span class="string">'https://api.x.ai/v1/verify'</span>, {
-      <span class="variable">method</span>: <span class="string">'POST'</span>,
-      <span class="variable">headers</span>: {
-        <span class="string">'Authorization'</span>: <span class="string">`Bearer ${process.env.XAI_API_KEY}`</span>
-      },
-      <span class="variable">body</span>: <span class="function">JSON.stringify</span>({ <span class="variable">url</span>: <span class="variable">threadUrl</span> })
-    });
-    
-    <span class="variable">res</span>.<span class="function">json</span>(<span class="keyword">await</span> <span class="variable">result</span>.<span class="function">json</span>());
-  } <span class="keyword">catch</span> (<span class="variable">error</span>) {
-    <span class="variable">res</span>.<span class="function">status</span>(<span class="string">500</span>).<span class="function">json</span>({ <span class="variable">error</span>: <span class="variable">error</span>.<span class="variable">message</span> });
-  }
-});</div>
-                </div>
+        <div class="cta-section">
+            <h2 style="margin-bottom: 20px; color: #2d3748;">Join The Experiment</h2>
+            <p style="margin-bottom: 30px; color: #4a5568; font-size: 1.1em;">Be part of this unique experiment and see if TV advertising really works for memecoins!</p>
+            <a href="#" class="cta-button">Buy TV Coin Now</a>
+            <div style="margin-top: 30px; font-size: 0.9em; color: #666666;">
+                <p>Track our experiment results in real-time</p>
             </div>
         </div>
-        
+
         <div class="footer">
-            <p>Built for content creators and platform moderators</p>
-            <p>Advanced AI-powered content verification</p>
+            <p>&copy; 2025 TV Coin - The Television Memecoin Experiment</p>
         </div>
     </div>
-    
-    <script>
-        function checkThread() {
-            const input = document.getElementById('threadInput');
-            const result = document.getElementById('result');
-            const url = input.value.trim();
-            
-            if (!url) {
-                alert('Please enter a thread URL');
-                return;
-            }
-            
-            // Show loading state
-            result.style.display = 'block';
-            result.innerHTML = `
-                <div>
-                    <p style="font-weight: 500; margin-bottom: 12px;">Analyzing thread content...</p>
-                    <div class="loading-bar">
-                        <div class="loading-progress" style="animation: loading 2s ease-in-out forwards;"></div>
-                    </div>
-                    <p style="font-size: 0.9rem; color: #64748b;">Checking against database of existing threads</p>
-                </div>
-            `;
-            
-            // Simulate API response
-            setTimeout(() => {
-                const isOriginal = Math.random() > 0.5;
-                const randomTimes = Math.floor(Math.random() * 10) + 1; // Random number 1-10
-                
-                if (isOriginal) {
-                    result.innerHTML = `
-                        <div>
-                            <div style="display: flex; align-items: center; margin-bottom: 16px;">
-                                <span class="status-indicator status-original"></span>
-                                <h3 style="font-size: 1.1rem; font-weight: 600; color: #059669;">Original Content Verified</h3>
-                            </div>
-                            <p style="color: #64748b; margin-bottom: 12px;">
-                                This thread appears to be original content. No similar threads found in our database.
-                            </p>
-                            <div style="background: #f0fdf4; padding: 12px; border-radius: 4px; border-left: 3px solid #10b981;">
-                                <p style="font-size: 0.9rem; color: #166534; margin: 0;">
-                                    Confidence Score: 94% | Last Checked: ${new Date().toLocaleTimeString()}
-                                </p>
-                            </div>
-                        </div>
-                    `;
-                } else {
-                    result.innerHTML = `
-                        <div>
-                            <div style="display: flex; align-items: center; margin-bottom: 16px;">
-                                <span class="status-indicator status-duplicate"></span>
-                                <h3 style="font-size: 1.1rem; font-weight: 600; color: #dc2626;">Larp - This was done over ${randomTimes} times</h3>
-                            </div>
-                            <p style="color: #64748b; margin-bottom: 16px;">
-                                Similar content was found. This thread may be derivative of existing posts.
-                            </p>
-                            <div style="background: #fef2f2; padding: 12px; border-radius: 4px; border-left: 3px solid #ef4444; margin-bottom: 12px;">
-                                <p style="font-size: 0.9rem; color: #991b1b; margin: 0; font-weight: 500;">
-                                    Match found: Thread posted 2 days ago by @verified_user
-                                </p>
-                            </div>
-                            <div style="background: #f8fafc; padding: 12px; border-radius: 4px;">
-                                <p style="font-size: 0.9rem; color: #475569; margin: 0;">
-                                    Similarity Score: 87% | Content overlap detected in opening statement
-                                </p>
-                            </div>
-                        </div>
-                    `;
-                }
-            }, 2000);
-        }
-        
-        // Add enter key support
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('threadInput').addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    checkThread();
-                }
-            });
-        });
-    </script>
 </body>
 </html>
-
