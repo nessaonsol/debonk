@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TV Coin</title>
-    <link rel="icon" type="image/x-icon" href="Screenshot 2025-08-03 184442.png">
+    <title>Kingsoft Cloud Holdings</title>
     <style>
         * {
             margin: 0;
@@ -16,239 +15,327 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: #ffffff;
-            min-height: 100vh;
+            background: #fff;
         }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 40px 20px;
-            position: relative;
-        }
-
-        .x-button {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: #000000;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9em;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .x-button:hover {
-            background: #333333;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            padding: 2rem;
         }
 
         .header {
             text-align: center;
-            margin-bottom: 60px;
-            background: #ffffff;
-            border: 2px solid #000000;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 2rem;
+            padding-right: 10rem;
+            position: relative;
         }
 
-        .tv-icon {
-            font-size: 80px;
-            margin-bottom: 20px;
-            display: block;
+        .header-x-button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #000;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.2s ease;
+        }
+
+        .header-x-button:hover {
+            background: #333;
         }
 
         h1 {
-            font-size: 3.5em;
-            font-weight: 800;
-            color: #2d3748;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #dc2626;
         }
 
         .subtitle {
-            font-size: 1.3em;
-            color: #4a5568;
-            font-weight: 300;
-            margin-bottom: 30px;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 1rem;
         }
 
-        .main-content {
-            background: #ffffff;
-            border: 2px solid #000000;
-            border-radius: 20px;
-            padding: 50px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            margin-bottom: 40px;
-        }
-
-        .experiment-box {
-            background: #000000;
-            color: white;
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .experiment-box h2 {
-            font-size: 2em;
-            margin-bottom: 15px;
-        }
-
-        .experiment-box p {
-            font-size: 1.2em;
-            opacity: 0.95;
-        }
-
-        .details {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-
-        .detail-card {
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
-            border: 2px solid #000000;
-        }
-
-        .detail-card h3 {
-            color: #2d3748;
-            margin-bottom: 10px;
-            font-size: 1.3em;
-        }
-
-        .detail-card p {
-            color: #4a5568;
-            font-size: 1.1em;
-        }
-
-        .cta-section {
-            text-align: center;
-            background: #ffffff;
-            border: 2px solid #000000;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: #000000;
-            color: white;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
+        .ticker {
+            font-size: 1.5rem;
+            color: #dc2626;
             font-weight: 600;
-            font-size: 1.2em;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            margin: 1rem 0;
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-            background: #333333;
+        .key-stat {
+            background: #fef2f2;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #dc2626;
+            margin: 2rem 0;
         }
 
-        .footer {
+        .big-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #dc2626;
+            display: block;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin: 2.5rem 0 1rem 0;
+            color: #1f2937;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin: 2rem 0 1rem 0;
+            color: #374151;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .timeline {
+            margin: 2rem 0;
+        }
+
+        .timeline-item {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: #f9fafb;
+            border-radius: 6px;
+            border-left: 3px solid #dc2626;
+        }
+
+        .date {
+            font-weight: 600;
+            color: #dc2626;
+            margin-bottom: 0.5rem;
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .comparison-item {
+            background: #f9fafb;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .comparison-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+
+        .highlight {
+            background: #f0fdf4;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #22c55e;
+            margin: 2rem 0;
+        }
+
+        .simple-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .simple-list li {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .simple-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #dc2626;
+            font-weight: bold;
+        }
+
+        .financial-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .metric-card {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
             text-align: center;
-            margin-top: 40px;
-            color: #666666;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #dc2626;
+            display: block;
+        }
+
+        .metric-label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .business-focus {
+            background: #fef7ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 3px solid #a855f7;
+            margin: 2rem 0;
         }
 
         @media (max-width: 768px) {
             .container {
-                padding: 20px 15px;
+                padding: 1rem;
             }
-
+            
             h1 {
-                font-size: 2.5em;
+                font-size: 2rem;
             }
-
-            .header, .main-content, .cta-section {
-                padding: 30px 20px;
-            }
-
-            .details {
+            
+            .comparison {
                 grid-template-columns: 1fr;
-                gap: 20px;
             }
-        }
-
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+            
+            .header-x-button {
+                position: static;
+                display: inline-block;
+                margin-bottom: 1rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="https://x.com/TvCoinBonk" class="x-button" target="_blank">𝕏</a>
-        
         <div class="header">
-            <div class="tv-icon">📺</div>
-            <h1>TV COIN</h1>
-            <p class="subtitle">The world's first memecoin TV advertising experiment</p>
+            <a href="https://x.com/kingsoftcompany" target="_blank" class="header-x-button">Follow on X</a>
+            <h1>Kingsoft Cloud Holdings</h1>
+            <div class="ticker">NASDAQ: KC | HKEX: 3896</div>
+            <div class="subtitle">the meme stock thats changing china</div>
         </div>
 
-        <div class="main-content">
-            <div class="experiment-box">
-                <h2>THE EXPERIMENT</h2>
-                <p>We paid for TV advertisements of our memecoin on major TV channels across the USA and UK for 1 entire week to see if people actually buy our memecoin!</p>
-            </div>
+        <div class="key-stat">
+            <span class="big-number">+4000%</span>
+            <div class="stat-label">in 1 week</div>
+        </div>
 
-            <div class="details">
-                <div class="detail-card">
-                    <h3>Coverage</h3>
-                    <p>TV channels across USA and UK</p>
-                </div>
-                <div class="detail-card">
-                    <h3>Duration</h3>
-                    <p>1 full week of advertisements</p>
-                </div>
-                <div class="detail-card">
-                    <h3>Goal</h3>
-                    <p>Test if TV ads drive memecoin purchases</p>
-                </div>
-                <div class="detail-card">
-                    <h3>Type</h3>
-                    <p>Real-world marketing experiment</p>
-                </div>
-            </div>
+        <h2>What is Kingsoft Cloud?</h2>
+        <p>Kingsoft Cloud Holdings Limited is a leading independent cloud service provider in China, offering comprehensive cloud infrastructure, platform services, and AI-powered solutions. Founded in 2012 and headquartered in Beijing, the company serves thousands of businesses across healthcare, gaming, financial services, and government sectors.</p>
 
-            <div style="background: #e8f4fd; padding: 30px; border-radius: 15px; text-align: center; margin: 30px 0;">
-                <h3 style="color: #2d3748; margin-bottom: 15px;">Why TV Advertising?</h3>
-                <p style="color: #4a5568; font-size: 1.1em;">While most memecoins rely on social media hype, we wanted to test if traditional TV advertising could actually drive cryptocurrency purchases. This is a genuine experiment to see if mainstream media can influence the crypto market.</p>
+        <p>Unlike many Chinese tech companies, Kingsoft Cloud has maintained its independence while building strategic partnerships with major technology ecosystems including Xiaomi and Kingsoft Corporation, creating a unique position in China's competitive cloud market.</p>
+
+        <div class="financial-metrics">
+            <div class="metric-card">
+                <span class="metric-value">$1.08B</span>
+                <div class="metric-label">Annual Revenue (2024)</div>
+            </div>
+            <div class="metric-card">
+                <span class="metric-value">$3.8B</span>
+                <div class="metric-label">Market Capitalization</div>
+            </div>
+            <div class="metric-card">
+                <span class="metric-value">+29.6%</span>
+                <div class="metric-label">Q4 2024 Revenue Growth</div>
             </div>
         </div>
 
-        <div class="cta-section">
-            <h2 style="margin-bottom: 20px; color: #2d3748;">Join The Experiment</h2>
-            <p style="margin-bottom: 30px; color: #4a5568; font-size: 1.1em;">Be part of this unique experiment and see if TV advertising really works for memecoins!</p>
-            <a href="#" class="cta-button">Buy TV Coin Now</a>
-            <div style="margin-top: 30px; font-size: 0.9em; color: #666666;">
-                <p>Track our experiment results in real-time</p>
+        <h2>The AI Transformation Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="date">2012-2020</div>
+                <p>Foundation years: Built core cloud infrastructure and established presence in gaming and video industries</p>
+            </div>
+            <div class="timeline-item">
+                <div class="date">2021-2023</div>
+                <p>Strategic pivot: Focused on high-quality clients, improved margins, and began AI cloud investments</p>
+            </div>
+            <div class="timeline-item">
+                <div class="date">Q4 2024</div>
+                <p>AI breakthrough: Achieved first-ever operating profit with 500% AI cloud business growth</p>
+            </div>
+            <div class="timeline-item">
+                <div class="date">2025 Outlook</div>
+                <p>Scaling AI solutions: Expanding Model-as-a-Service offerings and enterprise AI partnerships</p>
             </div>
         </div>
 
-        <div class="footer">
-            <p>&copy; 2025 TV Coin - The Television Memecoin Experiment</p>
+        <h2>Business Transformation Strategy</h2>
+        <ul class="simple-list">
+            <li><strong>Quality over quantity</strong> - Moved away from low-margin CDN services to focus on profitable enterprise clients</li>
+            <li><strong>AI-first approach</strong> - Established dedicated AI research center and launched MaaS solutions</li>
+            <li><strong>Strategic partnerships</strong> - Deep integration with Xiaomi ecosystem and independent AI unicorns</li>
+            <li><strong>Margin improvement</strong> - Gross margins improved from 7.9% to 15.2% through strategic client selection</li>
+            <li><strong>Technology innovation</strong> - Pioneered data security features in AI model services</li>
+        </ul>
+
+        <h2>Cloud Services Portfolio</h2>
+        <div class="comparison">
+            <div class="comparison-item">
+                <div class="comparison-title">Infrastructure (IaaS)</div>
+                <ul class="simple-list">
+                    <li>Cloud computing & storage</li>
+                    <li>Network & security solutions</li>
+                    <li>Database services</li>
+                    <li>Big data analytics</li>
+                </ul>
+            </div>
+            <div class="comparison-item">
+                <div class="comparison-title">AI & Platform (PaaS/SaaS)</div>
+                <ul class="simple-list">
+                    <li>Model-as-a-Service (MaaS)</li>
+                    <li>AI development platforms</li>
+                    <li>Industry-specific solutions</li>
+                    <li>Enterprise digital transformation</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="business-focus">
+            <h3>Industry Focus Areas</h3>
+            <p>Kingsoft Cloud specializes in serving key verticals including <strong>healthcare</strong> (medical imaging, patient data), <strong>gaming</strong> (cloud gaming infrastructure), <strong>financial services</strong> (regulatory compliance, data security), <strong>government</strong> (public service digitization), and <strong>AI/mobile internet</strong> companies requiring scalable cloud solutions.</p>
+        </div>
+
+        <h2>The Competitive Advantage</h2>
+        <p>What sets Kingsoft Cloud apart in China's crowded cloud market is its <strong>independent status</strong> combined with strategic ecosystem partnerships. While competitors like Alibaba Cloud and Tencent Cloud compete directly with their own clients, Kingsoft Cloud maintains neutrality, making it a trusted partner for companies across industries.</p>
+
+        <p>The company's recent AI transformation has been particularly impressive, with AI-related revenues doubling to RMB 326 million in Q2 2024 and AI cloud gross billing reaching RMB 474 million in Q4 2024 - a 500% year-over-year increase.</p>
+
+        <div class="highlight">
+            <h3>Recent Stock Performance</h3>
+            <p>Kingsoft Cloud shares have shown significant volatility, ranging from a 52-week low of <strong>$2.02</strong> to a high of <strong>$22.26</strong>. The stock has responded positively to the company's AI transformation story and improved financial metrics, including its achievement of first-ever operating profit in Q4 2024.</p>
+        </div>
+
+        <h2>Future Outlook</h2>
+        <p>With revised agreements projecting revenue growth of 128% from Kingsoft Corporation and 133% from Xiaomi partnerships through 2027, Kingsoft Cloud is positioned to benefit from China's AI boom. The company's focus on enterprise AI solutions, combined with its improving margins and strategic partnerships, makes it a key player to watch in the Chinese cloud computing space.</p>
+
+        <p>As China continues its digital transformation and AI adoption accelerates, Kingsoft Cloud's independent positioning and proven ability to serve enterprise clients puts it at the center of one of the world's largest cloud markets.</p>
+
+        <div class="business-focus">
+            <strong>Investment Thesis:</strong> Kingsoft Cloud represents a pure-play opportunity in Chinese cloud computing with a successful pivot to AI services, improving margins, strategic partnerships, and independence from the major tech giants.
         </div>
     </div>
 </body>
