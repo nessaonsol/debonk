@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kingsoft Cloud Holdings</title>
+    <title>Everyone</title>
+    <link rel="icon" type="image/x-icon" href="everyone.png">
     <style>
         * {
             margin: 0;
@@ -12,331 +13,837 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f8faf8;
+            color: #2d3748;
             line-height: 1.6;
-            color: #333;
-            background: #fff;
         }
 
-        .container {
-            max-width: 800px;
+        .navbar {
+            background: white;
+            padding: 15px 0;
+            border-bottom: 1px solid #e6f7ff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+        }
+
+        .nav-container {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .header {
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-circle {
+            width: 36px;
+            height: 36px;
+            background: #10b981;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2d3748;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #10b981;
+        }
+
+        .x-button {
+            width: 36px;
+            height: 36px;
+            background: #000000;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .x-button:hover {
+            background: #1a1a1a;
+        }
+
+        .x-button svg {
+            width: 16px;
+            height: 16px;
+            fill: white;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            padding: 80px 0;
             text-align: center;
-            margin-bottom: 3rem;
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 2rem;
-            padding-right: 10rem;
             position: relative;
+            overflow: hidden;
         }
 
-        .header-x-button {
+        .hero-section::before {
+            content: '';
             position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: #000;
-            color: #fff;
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="1.5" fill="rgba(255,255,255,0.08)"/><circle cx="60" cy="30" r="1" fill="rgba(255,255,255,0.12)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .contract-address {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-family: 'Monaco', monospace;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            display: inline-block;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-title {
+            font-size: 56px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #10b981;
+            padding: 15px 30px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
-            transition: background 0.2s ease;
+            font-size: 16px;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
-        .header-x-button:hover {
-            background: #333;
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
         }
 
-        h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: #dc2626;
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 1rem;
-        }
-
-        .ticker {
-            font-size: 1.5rem;
-            color: #dc2626;
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 12px;
+            text-decoration: none;
             font-weight: 600;
-            margin: 1rem 0;
+            font-size: 16px;
+            transition: all 0.2s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            cursor: pointer;
         }
 
-        .key-stat {
-            background: #fef2f2;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid #dc2626;
-            margin: 2rem 0;
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
         }
 
-        .big-number {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: #dc2626;
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            text-align: center;
+            color: #2d3748;
+            margin-bottom: 60px;
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 100px;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #10b981;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 25px;
+        }
+
+        .step-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #2d3748;
+        }
+
+        .step-description {
+            color: #6b7280;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .dashboard-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .jackpot-card {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .jackpot-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        .jackpot-header {
+            position: relative;
+            z-index: 10;
+        }
+
+        .jackpot-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .jackpot-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .jackpot-time {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        .timer-display {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .timer-unit {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 15px;
+            min-width: 60px;
+            backdrop-filter: blur(10px);
+        }
+
+        .timer-number {
+            font-size: 24px;
+            font-weight: 700;
             display: block;
         }
 
-        .stat-label {
-            color: #666;
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
+        .timer-label {
+            font-size: 12px;
+            opacity: 0.8;
         }
 
-        h2 {
-            font-size: 1.8rem;
-            margin: 2.5rem 0 1rem 0;
-            color: #1f2937;
-        }
-
-        h3 {
-            font-size: 1.3rem;
-            margin: 2rem 0 1rem 0;
-            color: #374151;
-        }
-
-        p {
-            margin-bottom: 1rem;
-            font-size: 1rem;
-        }
-
-        .timeline {
-            margin: 2rem 0;
-        }
-
-        .timeline-item {
-            margin: 1.5rem 0;
-            padding: 1rem;
-            background: #f9fafb;
-            border-radius: 6px;
-            border-left: 3px solid #dc2626;
-        }
-
-        .date {
-            font-weight: 600;
-            color: #dc2626;
-            margin-bottom: 0.5rem;
-        }
-
-        .comparison {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .comparison-item {
-            background: #f9fafb;
-            padding: 1.5rem;
-            border-radius: 8px;
-        }
-
-        .comparison-title {
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #1f2937;
-        }
-
-        .highlight {
-            background: #f0fdf4;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid #22c55e;
-            margin: 2rem 0;
-        }
-
-        .simple-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .simple-list li {
-            margin: 0.5rem 0;
-            padding-left: 1.5rem;
+        .jackpot-amount {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 10px;
             position: relative;
+            z-index: 10;
         }
 
-        .simple-list li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #dc2626;
-            font-weight: bold;
+        .jackpot-label {
+            font-size: 14px;
+            opacity: 0.8;
+            position: relative;
+            z-index: 10;
         }
 
-        .financial-metrics {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin: 2rem 0;
+        .winners-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid #e5f7f0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
-        .metric-card {
-            background: #f8fafc;
-            padding: 1.5rem;
-            border-radius: 8px;
+        .winners-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #2d3748;
+        }
+
+        .winner-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .winner-item:last-child {
+            border-bottom: none;
+        }
+
+        .winner-info {
+            flex: 1;
+        }
+
+        .winner-address {
+            font-family: 'Monaco', monospace;
+            font-size: 12px;
+            color: #6b7280;
+            margin-bottom: 5px;
+        }
+
+        .winner-details {
+            font-size: 11px;
+            color: #9ca3af;
+        }
+
+        .winner-amount {
+            font-size: 16px;
+            font-weight: 600;
+            color: #10b981;
+        }
+
+        .fee-checker {
+            display: none;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .fee-checker.active {
+            display: block;
+        }
+
+        .checker-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid #e5f7f0;
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.08);
             text-align: center;
         }
 
-        .metric-value {
-            font-size: 2rem;
+        .checker-title {
+            font-size: 32px;
             font-weight: 700;
-            color: #dc2626;
+            color: #10b981;
+            margin-bottom: 20px;
+        }
+
+        .checker-description {
+            font-size: 16px;
+            color: #6b7280;
+            margin-bottom: 40px;
+        }
+
+        .connect-button {
+            background: #10b981;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .connect-button:hover {
+            background: #059669;
+            transform: translateY(-1px);
+        }
+
+        .back-button {
+            background: transparent;
+            color: #10b981;
+            padding: 12px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            border: 1px solid #e5f7f0;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .back-button:hover {
+            background: #f0fdf4;
+        }
+
+        .wallet-connected {
+            display: none;
+            margin-top: 30px;
+        }
+
+        .wallet-connected.show {
             display: block;
         }
 
-        .metric-label {
-            color: #666;
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
+        .wallet-address-display {
+            background: #f9fafb;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-family: 'Monaco', monospace;
+            font-size: 12px;
+            color: #6b7280;
+            margin-bottom: 30px;
+            border: 1px solid #e5f7f0;
         }
 
-        .business-focus {
-            background: #fef7ff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 3px solid #a855f7;
-            margin: 2rem 0;
+        .fee-info-card {
+            background: #f0fdf4;
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid #bbf7d0;
+            margin-bottom: 20px;
+        }
+
+        .fee-amount-display {
+            font-size: 40px;
+            font-weight: 800;
+            color: #10b981;
+            margin-bottom: 8px;
+        }
+
+        .fee-label {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 20px;
+        }
+
+        .collect-fees-btn {
+            background: #d1d5db;
+            color: #9ca3af;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: 14px;
+            border: none;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .requirement-notice {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .requirement-text {
+            font-size: 13px;
+            color: #dc2626;
+            font-weight: 500;
         }
 
         @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
+            .hero-title {
+                font-size: 36px;
             }
             
-            h1 {
-                font-size: 2rem;
+            .hero-subtitle {
+                font-size: 16px;
             }
             
-            .comparison {
+            .dashboard-section {
                 grid-template-columns: 1fr;
+                gap: 30px;
             }
             
-            .header-x-button {
-                position: static;
-                display: inline-block;
-                margin-bottom: 1rem;
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .timer-display {
+                gap: 8px;
+            }
+            
+            .timer-unit {
+                padding: 10px;
+                min-width: 50px;
+            }
+            
+            .timer-number {
+                font-size: 18px;
+            }
+            
+            .jackpot-amount {
+                font-size: 36px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <a href="https://x.com/kingsoftcompany" target="_blank" class="header-x-button">Follow on X</a>
-            <h1>Kingsoft Cloud Holdings</h1>
-            <div class="ticker">NASDAQ: KC | HKEX: 3896</div>
-            <div class="subtitle">the meme stock thats changing china</div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-circle">E</div>
+                <div class="logo-text">Everyone</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#features">How It Works</a></li>
+            </ul>
+            <a href="https://x.com/EveryoneGetsFee" target="_blank" class="x-button" title="Follow us on X">
+                <svg viewBox="0 0 24 24">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+            </a>
         </div>
+    </nav>
 
-        <div class="key-stat">
-            <span class="big-number">+4000%</span>
-            <div class="stat-label">in 1 week</div>
-        </div>
-
-        <h2>What is Kingsoft Cloud?</h2>
-        <p>Kingsoft Cloud Holdings Limited is a leading independent cloud service provider in China, offering comprehensive cloud infrastructure, platform services, and AI-powered solutions. Founded in 2012 and headquartered in Beijing, the company serves thousands of businesses across healthcare, gaming, financial services, and government sectors.</p>
-
-        <p>Unlike many Chinese tech companies, Kingsoft Cloud has maintained its independence while building strategic partnerships with major technology ecosystems including Xiaomi and Kingsoft Corporation, creating a unique position in China's competitive cloud market.</p>
-
-        <div class="financial-metrics">
-            <div class="metric-card">
-                <span class="metric-value">$1.08B</span>
-                <div class="metric-label">Annual Revenue (2024)</div>
+    <!-- Main Page -->
+    <div id="mainPage">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-container">
+                <div class="contract-address">CA: Not Yet Updated</div>
+                <h1 class="hero-title">Everyone On Bags</h1>
+                <p class="hero-subtitle">The first fee-sharing memecoin on Solana. Hold tokens and earn from every trade automatically through airdrops.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="showFeeChecker()">Check Your Fees</button>
+                    <a href="#features" class="btn-secondary">How to Play</a>
+                </div>
             </div>
-            <div class="metric-card">
-                <span class="metric-value">$3.8B</span>
-                <div class="metric-label">Market Capitalization</div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="main-content" id="features">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Hold $EVERYONE Tokens</h3>
+                    <p class="step-description">Every 100 $EVERYONE tokens you hold equals 1 fee share entry</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">More Holdings = Better Odds</h3>
+                    <p class="step-description">10,000 tokens = 100 entries, 50,000 tokens = 500 entries</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Fees Every 5 Minutes</h3>
+                    <p class="step-description">2.5% of trading fees distributed automatically every 5 minutes</p>
+                </div>
             </div>
-            <div class="metric-card">
-                <span class="metric-value">+29.6%</span>
-                <div class="metric-label">Q4 2024 Revenue Growth</div>
+
+            <!-- Dashboard -->
+            <div class="dashboard-section">
+                <!-- Fee Distribution Card -->
+                <div class="jackpot-card">
+                    <div class="jackpot-header">
+                        <div class="jackpot-icon">💰</div>
+                        <div class="jackpot-title">Fee Distribution</div>
+                        <div class="jackpot-time">Next Distribution: Every 5 Minutes</div>
+                    </div>
+                    
+                    <div class="timer-display">
+                        <div class="timer-unit">
+                            <span class="timer-number" id="minutes">05</span>
+                            <span class="timer-label">MIN</span>
+                        </div>
+                        <div class="timer-unit">
+                            <span class="timer-number" id="seconds">00</span>
+                            <span class="timer-label">SEC</span>
+                        </div>
+                    </div>
+
+                    <div class="jackpot-amount" id="feeAmount">$12.43 USD</div>
+                    <div class="jackpot-label">CURRENT POOL</div>
+                </div>
+
+                <!-- No Recipients Yet -->
+                <div class="winners-card">
+                    <h3 class="winners-title">Fee Recipients</h3>
+                    <div style="text-align: center; padding: 40px 20px; color: #9ca3af;">
+                        <div style="font-size: 48px; margin-bottom: 16px; opacity: 0.5;">📭</div>
+                        <div style="font-size: 16px; margin-bottom: 8px; color: #6b7280;">No fees distributed yet</div>
+                        <div style="font-size: 14px; color: #9ca3af;">Be the first to receive fees by holding $EVERYONE</div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
+    </div>
 
-        <h2>The AI Transformation Timeline</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="date">2012-2020</div>
-                <p>Foundation years: Built core cloud infrastructure and established presence in gaming and video industries</p>
+    <!-- Fee Checker Page -->
+    <div id="feeChecker" class="fee-checker">
+        <div class="checker-card">
+            <h2 class="checker-title">Fee Checker</h2>
+            <p class="checker-description">Connect your Phantom wallet to check your collected fees</p>
+            
+            <button class="connect-button" onclick="connectWallet()">Connect Phantom Wallet</button>
+
+            <!-- Wallet Connected State -->
+            <div id="walletConnected" class="wallet-connected">
+                <div class="wallet-address-display" id="walletAddressDisplay"></div>
+                
+                <div class="fee-info-card">
+                    <div class="fee-amount-display">$0.00</div>
+                    <div class="fee-label">Available Fees</div>
+                    
+                    <button class="collect-fees-btn" disabled>Collect Fees</button>
+                </div>
+
+                <div class="requirement-notice">
+                    <div class="requirement-text">
+                        You need to buy or trade $EVERYONE to start earning fees
+                    </div>
+                </div>
+
+                <button class="back-button" onclick="disconnectWallet()">Disconnect</button>
             </div>
-            <div class="timeline-item">
-                <div class="date">2021-2023</div>
-                <p>Strategic pivot: Focused on high-quality clients, improved margins, and began AI cloud investments</p>
-            </div>
-            <div class="timeline-item">
-                <div class="date">Q4 2024</div>
-                <p>AI breakthrough: Achieved first-ever operating profit with 500% AI cloud business growth</p>
-            </div>
-            <div class="timeline-item">
-                <div class="date">2025 Outlook</div>
-                <p>Scaling AI solutions: Expanding Model-as-a-Service offerings and enterprise AI partnerships</p>
-            </div>
-        </div>
 
-        <h2>Business Transformation Strategy</h2>
-        <ul class="simple-list">
-            <li><strong>Quality over quantity</strong> - Moved away from low-margin CDN services to focus on profitable enterprise clients</li>
-            <li><strong>AI-first approach</strong> - Established dedicated AI research center and launched MaaS solutions</li>
-            <li><strong>Strategic partnerships</strong> - Deep integration with Xiaomi ecosystem and independent AI unicorns</li>
-            <li><strong>Margin improvement</strong> - Gross margins improved from 7.9% to 15.2% through strategic client selection</li>
-            <li><strong>Technology innovation</strong> - Pioneered data security features in AI model services</li>
-        </ul>
-
-        <h2>Cloud Services Portfolio</h2>
-        <div class="comparison">
-            <div class="comparison-item">
-                <div class="comparison-title">Infrastructure (IaaS)</div>
-                <ul class="simple-list">
-                    <li>Cloud computing & storage</li>
-                    <li>Network & security solutions</li>
-                    <li>Database services</li>
-                    <li>Big data analytics</li>
-                </ul>
-            </div>
-            <div class="comparison-item">
-                <div class="comparison-title">AI & Platform (PaaS/SaaS)</div>
-                <ul class="simple-list">
-                    <li>Model-as-a-Service (MaaS)</li>
-                    <li>AI development platforms</li>
-                    <li>Industry-specific solutions</li>
-                    <li>Enterprise digital transformation</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="business-focus">
-            <h3>Industry Focus Areas</h3>
-            <p>Kingsoft Cloud specializes in serving key verticals including <strong>healthcare</strong> (medical imaging, patient data), <strong>gaming</strong> (cloud gaming infrastructure), <strong>financial services</strong> (regulatory compliance, data security), <strong>government</strong> (public service digitization), and <strong>AI/mobile internet</strong> companies requiring scalable cloud solutions.</p>
-        </div>
-
-        <h2>The Competitive Advantage</h2>
-        <p>What sets Kingsoft Cloud apart in China's crowded cloud market is its <strong>independent status</strong> combined with strategic ecosystem partnerships. While competitors like Alibaba Cloud and Tencent Cloud compete directly with their own clients, Kingsoft Cloud maintains neutrality, making it a trusted partner for companies across industries.</p>
-
-        <p>The company's recent AI transformation has been particularly impressive, with AI-related revenues doubling to RMB 326 million in Q2 2024 and AI cloud gross billing reaching RMB 474 million in Q4 2024 - a 500% year-over-year increase.</p>
-
-        <div class="highlight">
-            <h3>Recent Stock Performance</h3>
-            <p>Kingsoft Cloud shares have shown significant volatility, ranging from a 52-week low of <strong>$2.02</strong> to a high of <strong>$22.26</strong>. The stock has responded positively to the company's AI transformation story and improved financial metrics, including its achievement of first-ever operating profit in Q4 2024.</p>
-        </div>
-
-        <h2>Future Outlook</h2>
-        <p>With revised agreements projecting revenue growth of 128% from Kingsoft Corporation and 133% from Xiaomi partnerships through 2027, Kingsoft Cloud is positioned to benefit from China's AI boom. The company's focus on enterprise AI solutions, combined with its improving margins and strategic partnerships, makes it a key player to watch in the Chinese cloud computing space.</p>
-
-        <p>As China continues its digital transformation and AI adoption accelerates, Kingsoft Cloud's independent positioning and proven ability to serve enterprise clients puts it at the center of one of the world's largest cloud markets.</p>
-
-        <div class="business-focus">
-            <strong>Investment Thesis:</strong> Kingsoft Cloud represents a pure-play opportunity in Chinese cloud computing with a successful pivot to AI services, improving margins, strategic partnerships, and independence from the major tech giants.
+            <button class="back-button" onclick="showMainPage()">Back to Home</button>
         </div>
     </div>
+
+    <script>
+        let isConnected = false;
+        let walletAddress = '';
+        let timerInterval = null;
+        let timeRemaining = 300; // 5 minutes
+
+        // Timer functionality
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                if (timeRemaining > 0) {
+                    timeRemaining--;
+                    updateTimerDisplay();
+                } else {
+                    timeRemaining = 300; // Reset to 5 minutes
+                    updateTimerDisplay();
+                    // Simulate fee amount change
+                    updateFeeAmount();
+                }
+            }, 1000);
+        }
+
+        function updateTimerDisplay() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        function updateFeeAmount() {
+            const amounts = ['$8.21', '$15.43', '$12.87', '$9.65', '$11.29', '$7.94'];
+            const randomAmount = amounts[Math.floor(Math.random() * amounts.length)];
+            document.getElementById('feeAmount').textContent = randomAmount + ' USD';
+        }
+
+        function stopTimer() {
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+            }
+        }
+
+        // Page navigation
+        function showFeeChecker() {
+            document.getElementById('mainPage').style.display = 'none';
+            document.getElementById('feeChecker').classList.add('active');
+            document.body.style.background = '#f8faf8';
+        }
+
+        function showMainPage() {
+            document.getElementById('feeChecker').classList.remove('active');
+            document.getElementById('mainPage').style.display = 'block';
+            document.body.style.background = '#f8faf8';
+            if (isConnected) {
+                disconnectWallet();
+            }
+        }
+
+        // Wallet functionality
+        async function connectWallet() {
+            try {
+                if (!window.solana || !window.solana.isPhantom) {
+                    alert('Phantom wallet not found. Please install Phantom wallet extension.');
+                    window.open('https://phantom.app/', '_blank');
+                    return;
+                }
+
+                const response = await window.solana.connect();
+                walletAddress = response.publicKey.toString();
+                isConnected = true;
+                showWalletConnected();
+                
+            } catch (error) {
+                console.error('Error connecting wallet:', error);
+                alert('Failed to connect wallet. Please try again.');
+            }
+        }
+
+        function showWalletConnected() {
+            document.querySelector('.connect-button').style.display = 'none';
+            
+            const truncatedAddress = `${walletAddress.slice(0, 8)}...${walletAddress.slice(-8)}`;
+            document.getElementById('walletAddressDisplay').textContent = `Connected: ${truncatedAddress}`;
+            
+            document.getElementById('walletConnected').classList.add('show');
+        }
+
+        function disconnectWallet() {
+            try {
+                if (window.solana && window.solana.disconnect) {
+                    window.solana.disconnect();
+                }
+                
+                isConnected = false;
+                walletAddress = '';
+                
+                document.querySelector('.connect-button').style.display = 'inline-block';
+                document.getElementById('walletConnected').classList.remove('show');
+                
+            } catch (error) {
+                console.error('Error disconnecting wallet:', error);
+            }
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize timer on page load
+        window.addEventListener('load', () => {
+            startTimer();
+            updateFeeAmount();
+        });
+
+        // Listen for wallet events
+        if (window.solana) {
+            window.solana.on('disconnect', () => {
+                disconnectWallet();
+            });
+        }
+    </script>
 </body>
 </html>
