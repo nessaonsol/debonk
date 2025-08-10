@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Everyone</title>
-    <link rel="icon" type="image/x-icon" href="everyone.png">
+    <title>Promote Coin</title>
+    <link rel="icon" type="image/x-icon" href="bag.png">
     <style>
         * {
             margin: 0;
@@ -13,837 +13,195 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #f8faf8;
-            color: #2d3748;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
+            color: #333;
+            background: #fff;
+            padding: 40px 20px;
         }
 
-        .navbar {
-            background: white;
-            padding: 15px 0;
-            border-bottom: 1px solid #e6f7ff;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
-        }
-
-        .nav-container {
-            max-width: 1200px;
+        .container {
+            max-width: 600px;
             margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .logo-circle {
-            width: 36px;
-            height: 36px;
-            background: #10b981;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 16px;
-        }
-
-        .logo-text {
-            font-size: 24px;
-            font-weight: 700;
-            color: #2d3748;
-            letter-spacing: -0.5px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 40px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: #4a5568;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 15px;
-            transition: color 0.2s ease;
-        }
-
-        .nav-links a:hover {
-            color: #10b981;
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid #e5e5e5;
+            position: relative;
         }
 
         .x-button {
-            width: 36px;
-            height: 36px;
-            background: #000000;
-            border-radius: 8px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-decoration: none;
-            transition: all 0.2s ease;
+            width: 35px;
+            height: 35px;
+            transition: background 0.2s ease;
         }
 
         .x-button:hover {
-            background: #1a1a1a;
+            background: #333;
         }
 
-        .x-button svg {
-            width: 16px;
-            height: 16px;
-            fill: white;
-        }
-
-        .hero-section {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            padding: 80px 0;
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="1.5" fill="rgba(255,255,255,0.08)"/><circle cx="60" cy="30" r="1" fill="rgba(255,255,255,0.12)"/></svg>');
-            animation: float 20s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .hero-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .contract-address {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 12px 20px;
-            border-radius: 25px;
-            font-family: 'Monaco', monospace;
-            font-size: 13px;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 40px;
-            display: inline-block;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .hero-title {
-            font-size: 56px;
-            font-weight: 800;
-            color: white;
             margin-bottom: 20px;
-            letter-spacing: -1px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .hero-subtitle {
-            font-size: 20px;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 50px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+        .subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 60px;
             font-weight: 400;
         }
 
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
+        .section {
+            margin-bottom: 50px;
         }
 
-        .btn-primary {
-            background: white;
-            color: #10b981;
-            padding: 15px 30px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.2s ease;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.2s ease;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            cursor: pointer;
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.5);
-        }
-
-        .main-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 20px;
-        }
-
-        .section-title {
-            font-size: 36px;
-            font-weight: 700;
-            text-align: center;
-            color: #2d3748;
-            margin-bottom: 60px;
-        }
-
-        .steps-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-bottom: 100px;
-        }
-
-        .step-card {
-            text-align: center;
-            padding: 30px;
-        }
-
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background: #10b981;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            font-weight: 700;
-            margin: 0 auto 25px;
-        }
-
-        .step-title {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: #2d3748;
-        }
-
-        .step-description {
-            color: #6b7280;
-            font-size: 15px;
-            line-height: 1.6;
-        }
-
-        .dashboard-section {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 40px;
-            margin-top: 60px;
-        }
-
-        .jackpot-card {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .jackpot-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: pulse 3s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.6; }
-        }
-
-        .jackpot-header {
-            position: relative;
-            z-index: 10;
-        }
-
-        .jackpot-icon {
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
-
-        .jackpot-title {
-            font-size: 18px;
-            margin-bottom: 10px;
-            opacity: 0.9;
-        }
-
-        .jackpot-time {
-            font-size: 14px;
-            opacity: 0.8;
-            margin-bottom: 30px;
-        }
-
-        .timer-display {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .timer-unit {
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 12px;
-            padding: 15px;
-            min-width: 60px;
-            backdrop-filter: blur(10px);
-        }
-
-        .timer-number {
-            font-size: 24px;
-            font-weight: 700;
-            display: block;
-        }
-
-        .timer-label {
-            font-size: 12px;
-            opacity: 0.8;
-        }
-
-        .jackpot-amount {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 10px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .jackpot-label {
-            font-size: 14px;
-            opacity: 0.8;
-            position: relative;
-            z-index: 10;
-        }
-
-        .winners-card {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            border: 1px solid #e5f7f0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
-
-        .winners-title {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: #2d3748;
-        }
-
-        .winner-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-            border-bottom: 1px solid #f3f4f6;
-        }
-
-        .winner-item:last-child {
-            border-bottom: none;
-        }
-
-        .winner-info {
-            flex: 1;
-        }
-
-        .winner-address {
-            font-family: 'Monaco', monospace;
-            font-size: 12px;
-            color: #6b7280;
-            margin-bottom: 5px;
-        }
-
-        .winner-details {
-            font-size: 11px;
-            color: #9ca3af;
-        }
-
-        .winner-amount {
-            font-size: 16px;
-            font-weight: 600;
-            color: #10b981;
-        }
-
-        .fee-checker {
-            display: none;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        .fee-checker.active {
-            display: block;
-        }
-
-        .checker-card {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid #e5f7f0;
-            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.08);
-            text-align: center;
-        }
-
-        .checker-title {
-            font-size: 32px;
-            font-weight: 700;
-            color: #10b981;
-            margin-bottom: 20px;
-        }
-
-        .checker-description {
-            font-size: 16px;
-            color: #6b7280;
-            margin-bottom: 40px;
-        }
-
-        .connect-button {
-            background: #10b981;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.2s ease;
-            border: none;
-            cursor: pointer;
-            margin-bottom: 20px;
-        }
-
-        .connect-button:hover {
-            background: #059669;
-            transform: translateY(-1px);
-        }
-
-        .back-button {
-            background: transparent;
-            color: #10b981;
-            padding: 12px 24px;
-            border-radius: 10px;
-            text-decoration: none;
+        h2 {
+            font-size: 1.3rem;
             font-weight: 500;
-            font-size: 14px;
-            transition: all 0.2s ease;
-            border: 1px solid #e5f7f0;
-            cursor: pointer;
-            margin-top: 20px;
+            margin-bottom: 15px;
+            color: #e74c3c;
         }
 
-        .back-button:hover {
-            background: #f0fdf4;
+        p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 15px;
         }
 
-        .wallet-connected {
-            display: none;
-            margin-top: 30px;
-        }
-
-        .wallet-connected.show {
-            display: block;
-        }
-
-        .wallet-address-display {
-            background: #f9fafb;
-            padding: 12px 16px;
+        .highlight {
+            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+            padding: 20px;
             border-radius: 8px;
-            font-family: 'Monaco', monospace;
-            font-size: 12px;
-            color: #6b7280;
-            margin-bottom: 30px;
-            border: 1px solid #e5f7f0;
+            margin: 20px 0;
+            border-left: 3px solid #e17055;
         }
 
-        .fee-info-card {
-            background: #f0fdf4;
-            padding: 30px;
-            border-radius: 16px;
-            border: 1px solid #bbf7d0;
+        .steps {
+            list-style: none;
+            counter-reset: step-counter;
+        }
+
+        .steps li {
+            counter-increment: step-counter;
             margin-bottom: 20px;
+            position: relative;
+            padding-left: 40px;
         }
 
-        .fee-amount-display {
-            font-size: 40px;
-            font-weight: 800;
-            color: #10b981;
-            margin-bottom: 8px;
+        .steps li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: #fff;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
         }
 
-        .fee-label {
-            font-size: 14px;
-            color: #6b7280;
-            margin-bottom: 20px;
-        }
-
-        .collect-fees-btn {
-            background: #d1d5db;
-            color: #9ca3af;
-            padding: 12px 24px;
-            border-radius: 10px;
-            font-weight: 500;
-            font-size: 14px;
-            border: none;
-            cursor: not-allowed;
-            opacity: 0.6;
-        }
-
-        .requirement-notice {
-            background: #fef2f2;
-            border: 1px solid #fecaca;
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-
-        .requirement-text {
-            font-size: 13px;
-            color: #dc2626;
-            font-weight: 500;
-        }
-
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 36px;
-            }
-            
-            .hero-subtitle {
-                font-size: 16px;
-            }
-            
-            .dashboard-section {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .timer-display {
-                gap: 8px;
-            }
-            
-            .timer-unit {
-                padding: 10px;
-                min-width: 50px;
-            }
-            
-            .timer-number {
-                font-size: 18px;
-            }
-            
-            .jackpot-amount {
-                font-size: 36px;
-            }
+        .disclaimer {
+            font-size: 0.9rem;
+            color: #888;
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <div class="logo-circle">E</div>
-                <div class="logo-text">Everyone</div>
+    <div class="container">
+        <a href="https://x.com/home" target="_blank" class="x-button">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+        </a>
+        <h1>Promote Coin</h1>
+        <p class="subtitle">An experiment to test if digital ads actually work</p>
+
+        <div class="section">
+            <h2>The Idea</h2>
+            <p>We created a cryptocurrency that exists for one purpose: to be promoted through digital advertising. Every transaction fee goes directly into buying ads on Google, YouTube, and TikTok.</p>
+            <div style="display: flex; justify-content: center; gap: 30px; margin: 25px 0; align-items: center;">
+                <div style="text-align: center;">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                    </svg>
+                    <p style="margin-top: 5px; font-size: 0.9rem; color: #666;">Google Ads</p>
+                </div>
+                <div style="text-align: center;">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="#FF0000">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                    <p style="margin-top: 5px; font-size: 0.9rem; color: #666;">YouTube</p>
+                </div>
+                <div style="text-align: center;">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="#000">
+                        <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                    </svg>
+                    <p style="margin-top: 5px; font-size: 0.9rem; color: #666;">TikTok</p>
+                </div>
             </div>
-            <ul class="nav-links">
-                <li><a href="#features">How It Works</a></li>
-            </ul>
-            <a href="https://x.com/EveryoneGetsFee" target="_blank" class="x-button" title="Follow us on X">
-                <svg viewBox="0 0 24 24">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                </svg>
-            </a>
+            <p>This lets us measure exactly how effective digital advertising really is by tracking ad spend versus actual purchases.</p>
         </div>
-    </nav>
 
-    <!-- Main Page -->
-    <div id="mainPage">
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="hero-container">
-                <div class="contract-address">CA: Not Yet Updated</div>
-                <h1 class="hero-title">Everyone On Bags</h1>
-                <p class="hero-subtitle">The first fee-sharing memecoin on Solana. Hold tokens and earn from every trade automatically through airdrops.</p>
-                <div class="hero-buttons">
-                    <button class="btn-primary" onclick="showFeeChecker()">Check Your Fees</button>
-                    <a href="#features" class="btn-secondary">How to Play</a>
-                </div>
-            </div>
-        </section>
+        <div class="section">
+            <h2>How It Works</h2>
+            <ol class="steps">
+                <li>Promote Coin launches with dev bags (pre-allocated tokens)</li>
+                <li>People buy and trade the token on exchanges</li>
+                <li>All transaction fees are automatically collected</li>
+                <li>100% of fees fund advertising campaigns across platforms</li>
+                <li>All updates, spending, and results posted on our X account</li>
+            </ol>
+        </div>
 
-        <!-- How It Works -->
-        <section class="main-content" id="features">
-            <h2 class="section-title">How It Works</h2>
-            <div class="steps-container">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h3 class="step-title">Hold $EVERYONE Tokens</h3>
-                    <p class="step-description">Every 100 $EVERYONE tokens you hold equals 1 fee share entry</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h3 class="step-title">More Holdings = Better Odds</h3>
-                    <p class="step-description">10,000 tokens = 100 entries, 50,000 tokens = 500 entries</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h3 class="step-title">Fees Every 5 Minutes</h3>
-                    <p class="step-description">2.5% of trading fees distributed automatically every 5 minutes</p>
-                </div>
-            </div>
+        <div class="highlight">
+            <strong>Complete Transparency:</strong> The coin launches with dev bags to ensure immediate liquidity. Every dollar in fees collected goes directly to advertising - no team allocation, no hidden costs. All campaign updates, spending reports, and results will be posted live on our X (Twitter) account.
+        </div>
 
-            <!-- Dashboard -->
-            <div class="dashboard-section">
-                <!-- Fee Distribution Card -->
-                <div class="jackpot-card">
-                    <div class="jackpot-header">
-                        <div class="jackpot-icon">💰</div>
-                        <div class="jackpot-title">Fee Distribution</div>
-                        <div class="jackpot-time">Next Distribution: Every 5 Minutes</div>
-                    </div>
-                    
-                    <div class="timer-display">
-                        <div class="timer-unit">
-                            <span class="timer-number" id="minutes">05</span>
-                            <span class="timer-label">MIN</span>
-                        </div>
-                        <div class="timer-unit">
-                            <span class="timer-number" id="seconds">00</span>
-                            <span class="timer-label">SEC</span>
-                        </div>
-                    </div>
+        <div class="section">
+            <h2>Real-Time Updates</h2>
+            <p>Follow our progress on X (Twitter) for live updates on ad spend, campaign performance, and conversion data. We'll post screenshots of ad dashboards, spending receipts, and detailed analytics as the experiment runs.</p>
+        </div>
 
-                    <div class="jackpot-amount" id="feeAmount">$12.43 USD</div>
-                    <div class="jackpot-label">CURRENT POOL</div>
-                </div>
+        <div class="section">
+            <h2>The Goal</h2>
+            <p>Create the first real-world case study of digital advertising effectiveness using cryptocurrency mechanics. No speculation, just measurable results.</p>
+        </div>
 
-                <!-- No Recipients Yet -->
-                <div class="winners-card">
-                    <h3 class="winners-title">Fee Recipients</h3>
-                    <div style="text-align: center; padding: 40px 20px; color: #9ca3af;">
-                        <div style="font-size: 48px; margin-bottom: 16px; opacity: 0.5;">📭</div>
-                        <div style="font-size: 16px; margin-bottom: 8px; color: #6b7280;">No fees distributed yet</div>
-                        <div style="font-size: 14px; color: #9ca3af;">Be the first to receive fees by holding $EVERYONE</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Fee Checker Page -->
-    <div id="feeChecker" class="fee-checker">
-        <div class="checker-card">
-            <h2 class="checker-title">Fee Checker</h2>
-            <p class="checker-description">Connect your Phantom wallet to check your collected fees</p>
-            
-            <button class="connect-button" onclick="connectWallet()">Connect Phantom Wallet</button>
-
-            <!-- Wallet Connected State -->
-            <div id="walletConnected" class="wallet-connected">
-                <div class="wallet-address-display" id="walletAddressDisplay"></div>
-                
-                <div class="fee-info-card">
-                    <div class="fee-amount-display">$0.00</div>
-                    <div class="fee-label">Available Fees</div>
-                    
-                    <button class="collect-fees-btn" disabled>Collect Fees</button>
-                </div>
-
-                <div class="requirement-notice">
-                    <div class="requirement-text">
-                        You need to buy or trade $EVERYONE to start earning fees
-                    </div>
-                </div>
-
-                <button class="back-button" onclick="disconnectWallet()">Disconnect</button>
-            </div>
-
-            <button class="back-button" onclick="showMainPage()">Back to Home</button>
+        <div class="disclaimer">
+            This is an experimental research project. Cryptocurrency carries risk. Only participate with money you can afford to lose.
         </div>
     </div>
-
-    <script>
-        let isConnected = false;
-        let walletAddress = '';
-        let timerInterval = null;
-        let timeRemaining = 300; // 5 minutes
-
-        // Timer functionality
-        function startTimer() {
-            timerInterval = setInterval(() => {
-                if (timeRemaining > 0) {
-                    timeRemaining--;
-                    updateTimerDisplay();
-                } else {
-                    timeRemaining = 300; // Reset to 5 minutes
-                    updateTimerDisplay();
-                    // Simulate fee amount change
-                    updateFeeAmount();
-                }
-            }, 1000);
-        }
-
-        function updateTimerDisplay() {
-            const minutes = Math.floor(timeRemaining / 60);
-            const seconds = timeRemaining % 60;
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-        }
-
-        function updateFeeAmount() {
-            const amounts = ['$8.21', '$15.43', '$12.87', '$9.65', '$11.29', '$7.94'];
-            const randomAmount = amounts[Math.floor(Math.random() * amounts.length)];
-            document.getElementById('feeAmount').textContent = randomAmount + ' USD';
-        }
-
-        function stopTimer() {
-            if (timerInterval) {
-                clearInterval(timerInterval);
-                timerInterval = null;
-            }
-        }
-
-        // Page navigation
-        function showFeeChecker() {
-            document.getElementById('mainPage').style.display = 'none';
-            document.getElementById('feeChecker').classList.add('active');
-            document.body.style.background = '#f8faf8';
-        }
-
-        function showMainPage() {
-            document.getElementById('feeChecker').classList.remove('active');
-            document.getElementById('mainPage').style.display = 'block';
-            document.body.style.background = '#f8faf8';
-            if (isConnected) {
-                disconnectWallet();
-            }
-        }
-
-        // Wallet functionality
-        async function connectWallet() {
-            try {
-                if (!window.solana || !window.solana.isPhantom) {
-                    alert('Phantom wallet not found. Please install Phantom wallet extension.');
-                    window.open('https://phantom.app/', '_blank');
-                    return;
-                }
-
-                const response = await window.solana.connect();
-                walletAddress = response.publicKey.toString();
-                isConnected = true;
-                showWalletConnected();
-                
-            } catch (error) {
-                console.error('Error connecting wallet:', error);
-                alert('Failed to connect wallet. Please try again.');
-            }
-        }
-
-        function showWalletConnected() {
-            document.querySelector('.connect-button').style.display = 'none';
-            
-            const truncatedAddress = `${walletAddress.slice(0, 8)}...${walletAddress.slice(-8)}`;
-            document.getElementById('walletAddressDisplay').textContent = `Connected: ${truncatedAddress}`;
-            
-            document.getElementById('walletConnected').classList.add('show');
-        }
-
-        function disconnectWallet() {
-            try {
-                if (window.solana && window.solana.disconnect) {
-                    window.solana.disconnect();
-                }
-                
-                isConnected = false;
-                walletAddress = '';
-                
-                document.querySelector('.connect-button').style.display = 'inline-block';
-                document.getElementById('walletConnected').classList.remove('show');
-                
-            } catch (error) {
-                console.error('Error disconnecting wallet:', error);
-            }
-        }
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Initialize timer on page load
-        window.addEventListener('load', () => {
-            startTimer();
-            updateFeeAmount();
-        });
-
-        // Listen for wallet events
-        if (window.solana) {
-            window.solana.on('disconnect', () => {
-                disconnectWallet();
-            });
-        }
-    </script>
 </body>
 </html>
